@@ -1,0 +1,11 @@
+#!/bin/bash
+##
+## USAGE:
+## bin/targets
+
+find -L data/ \
+	-name "*.filt.sam" \
+| sed -r \
+	-e 's#^data/#results/#' \
+	-e 's#.filt.sam$#.dedup.sam#'
+
